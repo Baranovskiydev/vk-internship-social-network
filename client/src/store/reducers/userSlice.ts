@@ -1,7 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IUser } from "../../models/IUser";
 import { fetchUsers } from "./ActionCreatorUser";
-import { ObjectId } from "mongoose";
 
 interface UserState{
     users: IUser[],
