@@ -4,7 +4,7 @@ import styles from "./header.module.css"
 
 export default function Header(): ReactJSXElement {
   return (
-    <header className={styles.header}>
+    <header className={styles.navbar}>
         fff
     </header>
   )

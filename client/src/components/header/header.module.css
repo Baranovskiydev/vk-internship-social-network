@@ -6,16 +6,11 @@
     --tertiary-color:#ef6817;
 }
 
-.header{
+.navbar{
     width: 100%;
     height: 80px;
-    background-color: var(--bg-color);
+    background-color: var(--main-color);
     color: var(--tertiary-color);
     position: fixed;
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}

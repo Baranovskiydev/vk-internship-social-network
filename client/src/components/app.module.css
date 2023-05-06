@@ -1,0 +1,25 @@
+:root{
+    --main-color: #21201f;
+    --secondary-color: #5f605d;
+    --text-color:#727272;
+    --bg-color: #383838;
+    --tertiary-color:#ef6817;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+body{
+    background-color: var(--bg-color);
+}
+
+.layout{
+
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 80px 20px 70vh 1fr 1fr 1fr; 
+}
