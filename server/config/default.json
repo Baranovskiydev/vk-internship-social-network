@@ -1,4 +1,4 @@
 {
-    "serverPort" : 5000,
+    "serverPort" : 7777,
     "dbURL": "mongodb+srv://admin:admin@vksocial.p8tqp2z.mongodb.net/"
 }

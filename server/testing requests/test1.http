@@ -1,0 +1,7 @@
+POST http://localhost:5000/api/auth/reg HTTP/1.1
+content-type: application/json
+
+{
+    "email": "sample@mail.ru",
+    "password": "test123"
+}
