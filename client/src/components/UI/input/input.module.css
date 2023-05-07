@@ -1,0 +1,39 @@
+:root{
+    --main-color: #21201f;
+    --secondary-color: #5f605d;
+    --text-color:#b4b4b4;
+    --bg-color: #383838;
+    --tertiary-color:#ef6817;
+}
+
+.input{
+    margin: 20px;
+    background: none;
+    border: solid 2px var(--tertiary-color);
+    padding: 15px;
+    border-radius: 25px;
+    color: var(--text-color);
+    font-size: 1.2em;
+}
+
+.input::placeholder{
+    color: var(--secondary-color);
+}
+
+.input:focus{
+    background-color: var(--secondary-color);
+    border: solid 2px var(--tertiary-color);
+}
+
+.input:invalid{
+    border: solid 2px var(rgb(136, 16, 0));
+}
+
+.input[type="date"]{
+    color: var(--text-color);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--tertiary-color);
+    border-radius: 25px;
+}

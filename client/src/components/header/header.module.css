@@ -12,5 +12,17 @@
     background-color: var(--main-color);
     color: var(--tertiary-color);
     position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
+.navbar__logo{
+    background-image: url("../../assets/orange-slice.png");
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+}

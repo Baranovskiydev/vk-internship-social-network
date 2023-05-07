@@ -8,9 +8,9 @@
 
 .registration{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: top;
-    flex-direction: row;
+    flex-direction: column;
 
     margin: 30px;
     padding: 30px;
@@ -23,7 +23,28 @@
 }
 
 .registration__header{
+    align-self: center;
     color: var(--tertiary-color);
     font-size: 1.3em;
     font-weight: 600;
+}
+
+.registration__btn{
+    font-size: 1.2em;
+    background: var(--tertiary-color);
+    color: var(--main-color);
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
+    width: 70%;
+    align-self: center;
+    border: 2px solid transparent;
+}
+.registration__btn:hover{
+    background: #ff863a;
+}
+
+.registration__btn:focus{
+    background: #ce4f00;
+    border: 2px solid var(--text-color);
 }
