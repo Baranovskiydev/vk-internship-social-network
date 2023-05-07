@@ -3,8 +3,8 @@ import styles from "./input.module.css"
 import { IUser } from '../../../models/IUser';
 
 interface InputProps {
-    value: string | undefined;
-    setValue?: void;
+    value?: string | undefined;
+    setValue?: any;
     type: string;
     placeholder: string;
     pattern?: string;
@@ -20,7 +20,7 @@ export default function Input(props: InputProps) {
     <input 
     value={props.value}
     onChange={(event: React.FormEvent<HTMLInputElement>) => {
-        //props.setValue(event.currentTarget.value)
+        props.setValue(event.currentTarget.value)
     }}
 
     className={styles.input}

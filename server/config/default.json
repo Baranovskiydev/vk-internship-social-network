@@ -1,5 +1,5 @@
 {
     "serverPort" : 7777,
-    "dbURL": "mongodb+srv://admin:admin@vksocial.p8tqp2z.mongodb.net/",
+    "dbURL": "mongodb+srv://admin:admin@vksocial.rhqvppi.mongodb.net/",
     "secretKey": "I-want-to-get-an-internship-in-vk"
 }

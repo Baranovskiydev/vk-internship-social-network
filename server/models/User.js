@@ -11,6 +11,8 @@ const User = new Schema({
     avatar: {type: ObjectId, ref:"Image"},
     posts:[{type: ObjectId, ref:"Post"}],
     friends: [{type: ObjectId, ref:"User"}]
-})
+},
+{collection: 'users'}
+)
 
 module.exports = model('User', User)

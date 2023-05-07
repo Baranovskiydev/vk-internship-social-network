@@ -1,3 +1,9 @@
+const User = require("../models/User");
+const bcrypt = require("bcryptjs");
+const config = require("config")
+const jwt = require("jsonwebtoken");
+const {check, validationResult} = require("express-validator");
+
 class authController{
     async registration (req, res){
         try{
@@ -30,13 +36,15 @@ class authController{
             const {email, password} = req.body;
             const user = await User.findOne({email});
             if(!user){
-                return res.status(404).json({msg:"User not found"})
+                return res.status(404).json({message:"User not found"})
             }
     
             const isPassValid = bcrypt.compareSync(password, user.password);
             if(!isPassValid){
-                return res.status(400).json({msg:"Invalid password"})
+                return res.status(400).json({message:"Invalid password"})
             }
+
+            //generate token
             const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "99999h"} )
     
             return res.json({

@@ -11,10 +11,9 @@ export default function Header(): ReactJSXElement {
           <div className={styles.navbar__logo}/>
         </Link>
 
-        <div className={styles.links}>
-          
-          <button>Login</button>
-          <button>Registration</button>  
+        <div className={styles.navbar__links}>
+        <Link to='registration'><div className={styles.btn}>Регистрация</div></Link>
+        <Link to='login'><div className={styles.btn}>Логин</div></Link>
         </div>
     </header>
   )

@@ -26,3 +26,28 @@
     height: 60px;
     background-size: contain;
 }
+
+.navbar__links{
+    display: flex;
+    flex-direction: row;
+}
+.navbar__links a{
+    text-decoration: none;
+}
+
+.btn{
+    padding: 15px;
+    margin: 15px;
+    background-color: var(--main-color);
+    border:solid 2px #ef6817;
+    color: var(--text-color);
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.btn:hover{
+    border:solid 2px var(--text-color);
+    background-color: var(--tertiary-color);
+    color: var(--main-color);
+}

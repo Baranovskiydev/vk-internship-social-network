@@ -14,8 +14,12 @@
 
     margin: 30px;
     padding: 30px;
+    padding-top: 150px;
+    padding-bottom: 150px;
     grid-column: 2 / 5;
     grid-row: 2 / 4;
+
+    height:fit-content;
 
     background-color: var(--main-color);
     border: solid 5px var(--tertiary-color);
@@ -47,4 +51,8 @@
 .registration__btn:focus{
     background: #ce4f00;
     border: 2px solid var(--text-color);
+}
+
+.lbl{
+    color: var(--text-color)
 }

@@ -21,8 +21,7 @@
 }
 
 .input:focus{
-    background-color: var(--secondary-color);
-    border: solid 2px var(--tertiary-color);
+    border: solid 2px var(--text-color);
 }
 
 .input:invalid{
