@@ -10,6 +10,7 @@ interface InputProps {
     pattern?: string;
     minl?: number;
     maxl?: number;
+    accept?: string;
 }
 
 export default function Input(props: InputProps) {
@@ -29,6 +30,7 @@ export default function Input(props: InputProps) {
     pattern={props.pattern}
     minLength={props.minl}
     maxLength={props.maxl}
+    accept={props.accept}
     required
     />
   )

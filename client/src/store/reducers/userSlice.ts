@@ -1,38 +1,53 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IUser } from "../../models/IUser";
-import { fetchUsers } from "./ActionCreatorUser";
 
 interface UserState{
-    users: IUser[],
+    user: IUser;
     isLoading: boolean;
-    error:string;
+    error:string | unknown;
+    isAuth: boolean;
 }
 
 const initialState: UserState = {
-    users: [],
+    user: {
+        user_id: "",
+        email: "",
+        avatar_link: "../../assets/user.png",
+        posts: [""],
+        friends: [""]
+    },
     isLoading: false,
-    error: ""
+    error: "",
+    isAuth: false
 }
 
-export const UserSlice = createSlice({
+export const userSlice = createSlice({
     name: "user",
     initialState,
-    reducers:{},
-    extraReducers: {
-        [fetchUsers.fulfilled.type]: (state, action: PayloadAction<IUser[]>) => {
+    reducers:{
+        fetchUserLoading(state){
+            state.isLoading = true;
+            state.error = '';
+        },
+        fetchUserError(state, action: PayloadAction<string | unknown>){
+
+            state.error = action.payload;
+            state.isLoading = false;
+        },
+        fetchUserSuccess(state, action: PayloadAction<IUser>){
             state.isLoading = false;
             state.error = '';
-            state.users = action.payload;
+            state.user = action.payload;
+            state.isAuth = true
+
         },
-        [fetchUsers.pending.type]: (state, action: PayloadAction<IUser[]>) => {
-            state.isLoading = true;
-        },
-        [fetchUsers.rejected.type]: (state, action: PayloadAction<string>) => {
-            state.isLoading = false;
-            state.error = action.payload;
+        logoutUser(state){
+            localStorage.removeItem('token');
+            state.isAuth = false;
+            state.user = initialState.user;
         }
-    }
+    },
 })
 
 
-export default UserSlice.reducer;
+export default userSlice.reducer;

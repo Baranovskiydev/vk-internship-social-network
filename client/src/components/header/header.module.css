@@ -30,6 +30,7 @@
 .navbar__links{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .navbar__links a{
     text-decoration: none;
@@ -50,4 +51,14 @@
     border:solid 2px var(--text-color);
     background-color: var(--tertiary-color);
     color: var(--main-color);
+}
+
+.avatar{
+    margin: 15px;
+    border: 5px solid var(--tertiary-color);
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
+    background-size: contain;
+    background-image: url("./../../assets/user.png");
 }

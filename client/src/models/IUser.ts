@@ -8,6 +8,6 @@ export interface IUser{
     city?: string;
     university?: string;
     avatar_link: string;
-    posts: string;
-    friends: string;
+    posts: [string];
+    friends: [string];
 }

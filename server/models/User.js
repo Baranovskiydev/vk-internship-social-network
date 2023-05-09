@@ -3,11 +3,11 @@ const {Schema, model, ObjectId} = require('mongoose');
 const User = new Schema({
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
-    name: {type: String},
-    surname: {type: String},
-    age: {type: Number,},
-    city: {type: String},
-    university: {type: String},
+    name: {type: String, default: "Username"},
+    surname: {type: String, default: "Usersurname"},
+    age: {type: Number, default: 0},
+    city: {type: String, default: "London"},
+    university: {type: String, default: "University of VK"},
     avatar: {type: ObjectId, ref:"Image"},
     posts:[{type: ObjectId, ref:"Post"}],
     friends: [{type: ObjectId, ref:"User"}]

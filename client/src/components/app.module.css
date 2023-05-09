@@ -23,3 +23,8 @@ body{
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 80px 20px 70vh 1fr 1fr 1fr; 
 }
+
+.loader{
+    margin: 50px auto;
+    color: #ef6817;
+}

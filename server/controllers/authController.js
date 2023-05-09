@@ -4,6 +4,7 @@ const config = require("config")
 const jwt = require("jsonwebtoken");
 const {check, validationResult} = require("express-validator");
 
+
 class authController{
     async registration (req, res){
         try{
@@ -49,18 +50,26 @@ class authController{
     
             return res.json({
                 token,
-                user: {
-                    id: user.id,
-                    email: user.email
-                }
+                user
             })
         }catch(e){
             console.log(e);
             res.send("Server error");
         }
     }
-    async getUsers (req, res){
-        
+    async auth (req, res){
+        try{
+            const user = await User.findOne({_id: req.user.id})
+            const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "99999h"} )
+    
+            return res.json({
+                token,
+                user
+            })
+        }catch(e){
+            console.log(e);
+            res.send("Server error");
+        }
     }
 }
 

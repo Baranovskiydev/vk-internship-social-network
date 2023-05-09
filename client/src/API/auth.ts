@@ -3,25 +3,26 @@ import { AppDispatch } from "../store/store"
 import { IUser } from "../models/IUser"
 import {userSlice} from "../store/reducers/userSlice"
 
-interface Ilogin {
+interface IAuth {
     token:string;
     user: IUser;
 }
 
-export const login = (email: string,password: string) => {
+export const auth = () => {
     return async (dispatch: AppDispatch) => {
         try {
             dispatch(userSlice.actions.fetchUserLoading())
-            const response = await axios.post<Ilogin>("http://localhost:7777/api/auth/login",{
-                email,
-                password
+            console.log(localStorage.getItem('token'))
+            const response = await axios.get<IAuth>("http://localhost:7777/api/auth/auth",
+                {headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}
             })
             dispatch(userSlice.actions.fetchUserSuccess(response.data.user))
-            localStorage.setItem('token', response.data.token)
             console.log(response.data)
         } catch (error) {
             dispatch(userSlice.actions.fetchUserError(error))
-            alert(error)
+            localStorage.removeItem('token');
+            //dispatch(userSlice.actions.logoutUser());
+            console.log(error)
         }
     }
 

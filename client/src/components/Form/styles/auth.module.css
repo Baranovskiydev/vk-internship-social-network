@@ -6,7 +6,7 @@
     --tertiary-color:#ef6817;
 }
 
-.registration{
+.authentication{
     display: flex;
     justify-content: space-around;
     align-items: top;
@@ -26,14 +26,14 @@
     border-radius: 25px;
 }
 
-.registration__header{
+.authentication__header{
     align-self: center;
     color: var(--tertiary-color);
     font-size: 1.3em;
     font-weight: 600;
 }
 
-.registration__btn{
+.authentication__btn{
     font-size: 1.2em;
     background: var(--tertiary-color);
     color: var(--main-color);
@@ -44,11 +44,11 @@
     align-self: center;
     border: 2px solid transparent;
 }
-.registration__btn:hover{
+.authentication__btn:hover{
     background: #ff863a;
 }
 
-.registration__btn:focus{
+.authentication__btn:focus{
     background: #ce4f00;
     border: 2px solid var(--text-color);
 }

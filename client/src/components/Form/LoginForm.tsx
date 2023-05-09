@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import Input from '../UI/input/Input'
-import styles from "./styles/reg.module.css"
+import styles from "./styles/auth.module.css"
 import { useAppDispatch } from '../../hooks/hooks';
 import { login } from '../../API/login';
 
@@ -17,13 +17,15 @@ export default function LoginForm() {
   }
 
   return (
-    <div className={styles.registration}>
-        <div className={styles.registration__header}>Логин</div>
+    <div className={styles.authentication}>
+        <div className={styles.authentication__header}>Логин</div>
+        <label className={styles.lbl}>E-mail</label>
         <Input value={email} setValue={setEmail} type='email' placeholder='Введите e-mail'/>
+        <label className={styles.lbl}>Пароль</label>
         <Input value={password} setValue={setPassword} type='password' placeholder='Введите Пароль'/>
 
 
-        <button className={styles.registration__btn} onClick={onClickHandler}>
+        <button className={styles.authentication__btn} onClick={onClickHandler}>
           Продолжить приключение в "соц.сети за 5 дней"
         </button>
     </div>
