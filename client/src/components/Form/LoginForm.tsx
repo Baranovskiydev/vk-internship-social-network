@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import Input from '../UI/input/Input'
 import styles from "./styles/auth.module.css"
-import { useAppDispatch } from '../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { login } from '../../API/login';
 
 
@@ -9,11 +9,11 @@ import { login } from '../../API/login';
 export default function LoginForm() {
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("");
-
+  const {user} = useAppSelector(state => state.userReducer)
   const dispatch = useAppDispatch()
 
   const onClickHandler = (): void => {
-    dispatch(login(email,password));
+    dispatch(login(email,password))
   }
 
   return (

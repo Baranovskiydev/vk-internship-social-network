@@ -10,9 +10,9 @@ interface UserState{
 
 const initialState: UserState = {
     user: {
-        user_id: "",
+        _id: "",
         email: "",
-        avatar_link: "../../assets/user.png",
+        avatar: "avatar-1683660791925-751902999.jpg",
         posts: [""],
         friends: [""]
     },

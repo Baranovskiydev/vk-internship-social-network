@@ -1,13 +1,13 @@
 
 export interface IUser{
-    user_id: string;
+    _id: string;
     email: string;
     name?: string;
     surname?: string;
     age?: string;
     city?: string;
     university?: string;
-    avatar_link: string;
+    avatar: string;
     posts: [string];
     friends: [string];
 }

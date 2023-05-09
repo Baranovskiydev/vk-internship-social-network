@@ -1,5 +1,6 @@
 {
     "serverPort" : 7777,
     "dbURL": "mongodb+srv://admin:admin@vksocial.rhqvppi.mongodb.net/",
-    "secretKey": "I-want-to-get-an-internship-in-vk"
+    "secretKey": "I-want-to-get-an-internship-in-vk",
+    "staticPath": "C:\\Users\\baran\\Desktop\\vk_soc\\server\\static"
 }

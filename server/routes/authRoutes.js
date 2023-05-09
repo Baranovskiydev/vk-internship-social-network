@@ -3,6 +3,7 @@ const {check} = require("express-validator");
 const controller = require("../controllers/authController");
 const authMiddleWare = require("../middleware/auth.middleware");
 
+
 const router = new Router();
 
 
