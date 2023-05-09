@@ -1,10 +1,7 @@
 const Router = require("express");
-const User = require("../models/User");
-const bcrypt = require("bcryptjs");
-const config = require("config")
-const jwt = require("jsonwebtoken");
-const {check, validationResult} = require("express-validator");
+const {check} = require("express-validator");
 const controller = require("../controllers/authController");
+const authMiddleWare = require("../middleware/auth.middleware");
 
 const router = new Router();
 
@@ -18,6 +15,8 @@ controller.registration)
 
 
 router.post('/login', controller.login);
+
+router.get('/auth',authMiddleWare, controller.auth)
 
 
 
