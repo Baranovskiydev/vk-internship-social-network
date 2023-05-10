@@ -90,6 +90,20 @@ class userController{
             
         }
     }
+
+    async getAllUsers(req,res) {
+        try {
+            const users = await User.find();
+
+            return res.json({
+                users
+            })
+
+        } catch (e) {
+            console.log(e)
+            return res.status(400).json({message: "Server Error"})
+        }
+    }
 }
 
 module.exports = new userController();

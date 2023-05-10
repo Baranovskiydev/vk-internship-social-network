@@ -9,10 +9,11 @@ const router = new Router();
 
 
 router.get('/user',authMiddleWare, controller.getUser);
-router.get('/find',authMiddleWare,controller.findUsers);
+router.post('/find',authMiddleWare,controller.findUsers);
 router.post('/add',authMiddleWare,controller.addFriend);
 router.delete('/remove',authMiddleWare,controller.removeFriend);
 router.put('/edit',[authMiddleWare, upload.none()],controller.editUser);
+router.get('/all',authMiddleWare,controller.getAllUsers);
 
 
 

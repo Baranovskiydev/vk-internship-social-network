@@ -11,13 +11,13 @@ export default function Humans() {
     const dispatch = useAppDispatch();
     const {users} = useAppSelector(state => state.otherUsersReducer);
 
-    useEffect(() => {
-        const callback = function(entries, observer){
+    // useEffect(() => {
+    //     const callback = function(entries, observer){
             
-        };
-        observer.current = new IntersectionObserver(callback);
-        observer.current.observe(last_elem.current)
-    },[])
+    //     };
+    //     observer.current = new IntersectionObserver(callback);
+    //     observer.current.observe(last_elem.current)
+    // },[])
 
   return (
     <div className={styles.page}>
