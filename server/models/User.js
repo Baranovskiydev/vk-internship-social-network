@@ -8,7 +8,7 @@ const User = new Schema({
     age: {type: Number, default: 0},
     city: {type: String, default: "London"},
     university: {type: String, default: "University of VK"},
-    avatar: {type: String},
+    avatar: {type: String, default:"avatar-1683660791925-751902999.jpg"},
     posts:[{type: ObjectId, ref:"Post"}],
     friends: [{type: ObjectId, ref:"User"}]
 },

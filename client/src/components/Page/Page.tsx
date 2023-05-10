@@ -72,6 +72,7 @@ function Page() {
                 <h1>Мои посты</h1>
                 {posts.map((elem: IPost) => {
                     return <Post 
+                    key={elem._id}
                     text={elem.text} 
                     image={elem.image} 
                     name={elem.username} 

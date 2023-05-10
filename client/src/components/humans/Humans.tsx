@@ -26,16 +26,19 @@ export default function Humans() {
 
   return (
     <div className={styles.page}>
-        <h1>Люди карочи</h1>
+        <h1 className={styles.page__heading}>Поиск по пользователям есть на беке, но тута закончился, я не успеваю</h1>
+        <h1 className={styles.page__heading}>Люди карочи</h1>
         {users.map((user) => {
             return <Usercard 
+            key={user._id}
             fullname={user.name+' '+user.surname}
             avatar={user.avatar}
             age={user.age}
             id = {user._id}
+            labelbtn={'Добавить в друзья'}
             />
         })}
-        <div ref={last_elem} style={{height: "20px"}}/>
+        <div ref={last_elem} style={{height: "20px", fontSize:"2em"}}>useobserver тоже не успеваю, но я умею{":("}</div>
     </div>
   )
 }

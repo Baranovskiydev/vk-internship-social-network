@@ -26,3 +26,10 @@
     border: solid 5px var(--tertiary-color);
     border-radius: 25px;
 }
+
+.page__heading{
+    align-self: center;
+    margin: 30px;
+    color: var(--tertiary-color);
+    font-size: 2em;
+}

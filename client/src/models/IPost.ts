@@ -1,6 +1,6 @@
 
 export interface IPost{
-    id: string;
+    _id: string;
     text: String;
     username: String;
     createdAt: Date;

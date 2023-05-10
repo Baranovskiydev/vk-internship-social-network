@@ -6,6 +6,7 @@ interface CardProps{
     avatar: String;
     id?: string;
     age: number | undefined;
+    labelbtn?: string;
 }
 
 export default function Usercard(props: CardProps) {
@@ -22,7 +23,7 @@ export default function Usercard(props: CardProps) {
         <img src={avatar_link} alt="аватарки тута нет" />
         <h1>{info}</h1>
         <button className={styles.btn} onClick={() => {onClickHandler()}}>
-            Добавить в друзья
+            {props.labelbtn}
         </button>
     </div>
   )

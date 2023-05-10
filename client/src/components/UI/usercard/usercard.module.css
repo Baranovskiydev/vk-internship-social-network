@@ -9,7 +9,8 @@
 .card{
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
+    color: var(--text-color);
 
     margin: 30px;
     padding: 30px;
