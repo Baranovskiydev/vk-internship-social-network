@@ -28,7 +28,7 @@ function Page() {
         
     }, [])
     
-    const avatar_link = 'localhost:7777/'+ user.avatar;
+    const avatar_link = 'http://localhost:7777/'+ user.avatar;
 
     
 

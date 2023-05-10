@@ -6,7 +6,7 @@
     --tertiary-color:#ef6817;
 }
 
-.page{
+.card{
     display: flex;
     align-items: center;
 
@@ -19,4 +19,28 @@
     background-color: var(--main-color);
     border: solid 5px var(--tertiary-color);
     border-radius: 25px;
+}
+
+.card img{
+    height: 100px;
+    width: 100px;
+}
+
+.btn{
+    padding: 15px;
+    margin: 15px;
+    background-color: var(--main-color);
+    border:solid 2px #ef6817;
+    color: var(--text-color);
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover{
+    border:solid 2px var(--text-color);
+    background-color: var(--tertiary-color);
+    color: var(--main-color);
 }
