@@ -1,17 +1,36 @@
-import React from 'react'
+import React, {useEffect, useMemo} from 'react'
 import styles from "./page.module.css"
-import { useParams } from 'react-router-dom'
-import { useAppSelector } from '../../hooks/hooks';
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import Input from '../UI/input/Input';
+import { IPost } from '../../models/IPost';
+import Post from './Post/Post';
+import { getSingleUser } from '../../API/getUser';
+import { getPosts } from '../../API/getPosts';
 
 function Page() {
     const { id } = useParams();
-    const {user} = useAppSelector(state => state.userReducer)
-    const avatar_link = 'localhost:7777/'+ user.avatar;
-    const URL = 'localhost:7777';
-    const URL_CREATE_POST = URL + '/api/post/add'
 
-    console.log(avatar_link);
+    
+    const URL = 'localhost:7777';
+    const {posts} = useAppSelector(state => state.postReducer);
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+    const {user} = useAppSelector(state => state.singleUserReducer);
+    useEffect(() => {
+        console.log(id);
+        if (id){
+            dispatch(getSingleUser(id));
+            dispatch(getPosts(id));
+        }else{
+            navigate('*')
+        }
+        
+    }, [])
+    
+    const avatar_link = 'localhost:7777/'+ user.avatar;
+
+    
 
   return (
     <div className={styles.page}>
@@ -22,9 +41,9 @@ function Page() {
             <div className={styles.profile__info}>{user.surname}</div>
             <div className={styles.profile__info}>Возраст: {user.age}</div>
             <div className={styles.block}>
-                <button className={styles.btn} >Друзья</button>
-                <button className={styles.btn} >Лента</button>
-                <button className={styles.btn} >Диалоги</button>
+                <Link to='/friendlist' className={styles.btn}>Друзья</Link>
+                <Link to='/feed' className={styles.btn}>Лента</Link>
+                <Link to='/humans' className={styles.btn}>Люди</Link>
             </div>
         </div>
         <div className={styles.feed}>
@@ -32,7 +51,7 @@ function Page() {
                 <div>
                     <div>Город:{user.city ?? "город не указан"}</div>
                     <div>Университет:{user.university ?? "Университет не указан"}</div>
-                    <div>Кол-во постов:{user.posts.length}</div>
+                    <div>Кол-во постов:{user.posts?.length}</div>
                 </div>
                 
                 <button className={styles.btn}>
@@ -51,6 +70,15 @@ function Page() {
             </div>
             <div className={styles.postCreator}>
                 <h1>Мои посты</h1>
+                {posts.map((elem: IPost) => {
+                    return <Post 
+                    text={elem.text} 
+                    image={elem.image} 
+                    name={elem.username} 
+                    creation_date={elem.createdAt}
+                    likes_count={elem.likes}
+                    />
+                })}
             </div>
         </div>
     </div>

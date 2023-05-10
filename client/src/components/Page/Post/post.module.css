@@ -1,0 +1,25 @@
+:root{
+    --main-color: #21201f;
+    --secondary-color: #5f605d;
+    --text-color:#b4b4b4;
+    --bg-color: #383838;
+    --tertiary-color:#ef6817;
+}
+
+
+.post{
+    color: var(--text-color);
+    border: 5px solid var(--tertiary-color);
+    background-color: var(--bg-color);
+
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.post h1{
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #ef6817;
+}

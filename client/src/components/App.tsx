@@ -10,6 +10,9 @@ import { useAppDispatch, useAppSelector } from '../hooks/hooks';
 import Dialogues from './dialogues/Dialogues';
 import Page from './Page/Page';
 import Error404 from './NotFound/Error404';
+import Friendlist from './friendlist/Friendlist';
+import Humans from './humans/Humans';
+import Feed from './feed/Feed';
 
 
 function App() {
@@ -40,8 +43,9 @@ function App() {
           isAuth && !isLoading &&
           <Routes>
             <Route path=':id' element={<Page/>}/>
-            <Route path='friendlist'/>
-            <Route path='dialogues' element={<Dialogues/>}/>
+            <Route path='friendlist' element = {<Friendlist/>}/>
+            <Route path='humans' element = {<Humans/>}/>
+            <Route path='feed' element = {<Feed/>}/>
             <Route path='*' element={<Error404/>}/>
           </Routes>
         }

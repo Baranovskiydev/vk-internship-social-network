@@ -3,6 +3,7 @@ import userReducer from './reducers/userSlice';
 import postReducer from './reducers/postSlice';
 import friendReducer from './reducers/friendsSlice';
 import otherUsersReducer from './reducers/otherUsersSlice';
+import singleUserReducer from './reducers/singleUser';
 
 
 
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   userReducer,
   postReducer,
   friendReducer,
-  otherUsersReducer
+  otherUsersReducer,
+  singleUserReducer
 })
 
 export const setupStore = () => {

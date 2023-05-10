@@ -1,0 +1,28 @@
+:root{
+    --main-color: #21201f;
+    --secondary-color: #5f605d;
+    --text-color:#727272;
+    --bg-color: #383838;
+    --tertiary-color:#ef6817;
+}
+
+.page{
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    flex-direction: column;
+
+    grid-column: 2 / 5;
+    grid-row-start: 2;
+
+    margin: 30px;
+    padding: 30px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    height:fit-content;
+
+    background-color: var(--main-color);
+    border: solid 5px var(--tertiary-color);
+    border-radius: 25px;
+}

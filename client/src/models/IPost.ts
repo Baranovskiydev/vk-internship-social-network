@@ -6,5 +6,5 @@ export interface IPost{
     createdAt: Date;
     image:String;
     user: String;
-    likes: Number;
+    likes: number;
 }

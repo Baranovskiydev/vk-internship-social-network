@@ -14,6 +14,7 @@ module.exports = (req,res,next) => {
         const decoded = jwt.verify(token, config.get('secretKey'))
         
         req.user = decoded;
+        req.id = req.headers.id;
         next()
     } catch (e) {
         console.log(e)

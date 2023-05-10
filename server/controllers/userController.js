@@ -6,8 +6,8 @@ const SERVER_URL = config.get('serverURL')
 class userController{
     async getUser(req,res) {
         try {
-            const {email} = req.body;
-            const user = await User.findOne({email});
+            const id = req.id;
+            const user = await User.findById(id);
             console.log(user);
 
             if(!user){

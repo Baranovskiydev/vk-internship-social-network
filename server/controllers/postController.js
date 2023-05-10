@@ -47,7 +47,8 @@ class postController {
     }
     async getPostsbyUser(req,res){
         try {
-            const {user_id} = req.body;
+            const user_id = req.id;
+            console.log(user_id)
             const user = await User.findById(user_id);
 
             if(!user){

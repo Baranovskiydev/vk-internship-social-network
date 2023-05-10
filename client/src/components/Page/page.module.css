@@ -55,7 +55,7 @@
 .profile__info{
     margin: 10px;
     color: var(--text-color);
-    font-size: 1.3em;
+    font-size: 1.8em;
 }
 
 .addinfo{
@@ -83,6 +83,8 @@
     border-radius: 25px;
     font-weight: 600;
     font-size: 1.1em;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn:hover{
