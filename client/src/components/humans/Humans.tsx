@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from 'react'
 import styles from './humans.module.css'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
 import Usercard from '../UI/usercard/Usercard';
+import { getAllUsers } from '../../API/getAllUsers';
 
 export default function Humans() {
 
@@ -11,6 +12,10 @@ export default function Humans() {
     const dispatch = useAppDispatch();
     const {users} = useAppSelector(state => state.otherUsersReducer);
 
+    useEffect(()=>{
+        dispatch(getAllUsers());
+    },[])
+    
     // useEffect(() => {
     //     const callback = function(entries, observer){
             
