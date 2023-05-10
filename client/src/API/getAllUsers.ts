@@ -8,7 +8,7 @@ interface IAllUsers {
     users: IUser[];
 }
 
-export const auth = () => {
+export const getAllUsers = () => {
     return async (dispatch: AppDispatch) => {
         try {
             dispatch(otherUserSlice.actions.fetchAllUsersLoading())
