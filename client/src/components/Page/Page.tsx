@@ -8,8 +8,8 @@ function Page() {
     const { id } = useParams();
     const {user} = useAppSelector(state => state.userReducer)
     const avatar_link = 'localhost:7777/'+ user.avatar;
-    const URL = '';
-    const URL_CREATE_POST = URL + '/api/post/create'
+    const URL = 'localhost:7777';
+    const URL_CREATE_POST = URL + '/api/post/add'
 
     console.log(avatar_link);
 
@@ -41,10 +41,10 @@ function Page() {
             </div>
             <div className={styles.postCreator}>
                 <h1>Создать пост</h1>
-                <textarea maxLength={500} placeholder='Расскажите друзьями что-нибудь о своей жизни...'></textarea>
-                <div className={styles.post__btns}>
-                    <form action = {URL_CREATE_POST} method='post' encType='multipart/form-data'>
-                        <Input type='file' placeholder='Добавьте картинку' accept='.jpg'/>
+                <div className={styles.post__form}>
+                    <form action = "http://localhost:7777/api/post/add" method='post' encType='multipart/form-data'>
+                    <textarea name='text' maxLength={500} placeholder='Расскажите друзьями что-нибудь о своей жизни...'></textarea>
+                        <Input name='postimage' type='file' placeholder='Добавьте картинку' accept='.jpg'/>
                         <button type='submit' className={styles.btn}>Опубликовать</button>
                     </form>
                 </div>

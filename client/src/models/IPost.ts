@@ -1,7 +1,10 @@
 
 export interface IPost{
     id: string;
-    body: String;
-    img_id: string;
-    likes_count: Number;
+    text: String;
+    username: String;
+    createdAt: Date;
+    image:String;
+    user: String;
+    likes: Number;
 }

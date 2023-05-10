@@ -129,9 +129,3 @@
     padding: 5px;
 }
 
-.post__btns{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-

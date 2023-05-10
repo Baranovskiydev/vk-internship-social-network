@@ -11,6 +11,7 @@ interface InputProps {
     minl?: number;
     maxl?: number;
     accept?: string;
+    name?:string;
 }
 
 export default function Input(props: InputProps) {
