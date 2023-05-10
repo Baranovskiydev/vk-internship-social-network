@@ -1,7 +1,7 @@
 const User = require("../models/User")
 const config = require('config')
 
-const SERVER_URL = "localhost:7777/"
+const SERVER_URL = config.get('serverURL');
 
 class FileController{
     async uploadAvatar(req,res) {

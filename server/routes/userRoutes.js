@@ -8,11 +8,11 @@ const upload = multer();
 const router = new Router();
 
 
-router.post('/user',authMiddleWare, controller.getUser);
-router.post('/find',authMiddleWare,controller.findUsers);
+router.get('/user',authMiddleWare, controller.getUser);
+router.get('/find',authMiddleWare,controller.findUsers);
 router.post('/add',authMiddleWare,controller.addFriend);
-router.post('/remove',authMiddleWare,controller.removeFriend);
-router.post('/edit',[authMiddleWare, upload.none()],controller.editUser);
+router.delete('/remove',authMiddleWare,controller.removeFriend);
+router.put('/edit',[authMiddleWare, upload.none()],controller.editUser);
 
 
 

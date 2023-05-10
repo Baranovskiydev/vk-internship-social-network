@@ -1,7 +1,7 @@
 const User = require("../models/User")
 const config = require('config')
 
-const SERVER_URL = "localhost:7777/"
+const SERVER_URL = config.get('serverURL')
 
 class userController{
     async getUser(req,res) {
@@ -46,7 +46,7 @@ class userController{
 
             user.friends.push(friend._id);
 
-            user.save();
+            await user.save();
 
             res.status(200).json({message: "Friend added"})
 
@@ -68,7 +68,7 @@ class userController{
                 }
             })
             console.log(user.friends);
-            user.save();
+            await user.save();
 
             res.status(200).json({message: "Friend removed"})
         } catch (error) {
@@ -84,7 +84,7 @@ class userController{
             user.city = req.body.city ?? user.city;
             user.university = req.body.university ?? user.university;
 
-            user.save()
+            await user.save()
             return res.status(200).json({message:"User have been edited"})
         } catch (error) {
             
