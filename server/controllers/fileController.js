@@ -1,6 +1,4 @@
 const User = require("../models/User")
-const Uuid = require("uuid")
-const fs = require('fs')
 const config = require('config')
 
 const SERVER_URL = "localhost:7777/"

@@ -12,7 +12,7 @@ export default function Header(): ReactJSXElement {
   const {user, isAuth, isLoading} = useAppSelector(state => state.userReducer);
   const dispatch = useAppDispatch();
 
-
+  const avatar_link = 'localhost:7777/'+ user.avatar;
 
   return (
 
@@ -28,7 +28,7 @@ export default function Header(): ReactJSXElement {
         {!isAuth && !isLoading && <Link to='login'><div className={styles.btn}>Логин</div></Link>}
 
         {/* Authed */}
-        {isAuth && <Link to=':id'><div className={styles.avatar} ></div></Link>}
+        {isAuth && <Link to=':id'><div className={styles.avatar} style={{backgroundImage: `${avatar_link}`}} ></div></Link>}
         {isAuth && <div className={styles.btn} onClick={() => dispatch(userSlice.actions.logoutUser())}>Выход </div>}
         </div>
     </header>

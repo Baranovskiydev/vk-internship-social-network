@@ -21,7 +21,9 @@ export default function Input(props: InputProps) {
     <input 
     value={props.value}
     onChange={(event: React.FormEvent<HTMLInputElement>) => {
+        if(props.setValue){
         props.setValue(event.currentTarget.value)
+        }
     }}
 
     className={styles.input}
